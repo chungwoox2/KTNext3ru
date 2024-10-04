@@ -50,7 +50,7 @@ li a::after {
 }
 
 li a::before {
-  top: 0;
+  top: -8px;
   width: 10px;
   height: 10px;
 }
@@ -67,6 +67,44 @@ li a:nth-child(1)::before {
 li a:nth-child(1)::after {
   background-color: white;
 }
+li a:nth-child(2)::before {
+  background-color: rgb(255 175 54);
+}
+
+li a:nth-child(2)::after {
+  background-color: rgb(255 253 207);
+}
+
+li a:nth-child(3)::before {
+  background-color: rgb(222 255 143);
+}
+
+li a:nth-child(3)::after {
+  background-color: rgb(117 255 229);
+}
+
+li a:nth-child(4)::before {
+  background-color: rgb(165 245 255);
+}
+
+li a:nth-child(4)::after {
+  background-color: rgb(210 226 255);
+}
+li a:nth-child(5)::before {
+  background-color: rgb(221 188 255);
+}
+
+li a:nth-child(5)::after {
+  background-color: rgb(255 232 238);
+}
+
+li a:nth-child(6)::before {
+  background-color: rgb(253 248 255);
+}
+
+li a:nth-child(6)::after {
+  background-color: rgb(255 0 178);
+}
 
 li a:hover {
   color: #fff;
@@ -76,4 +114,24 @@ li a:hover::before,
 li a:hover::after {
   transform: scale(1);
   animation: sparkle 2s infinite;
+}
+
+@media (max-width: 1279px) {
+  .lnb_header {
+    transform: translateY(0);
+    transition: none;
+  }
+}
+
+.gnb_header,
+.lnb_header {
+  transition: transform 0.3s ease;
+}
+
+.slide-up {
+  transform: translateY(-49%);
+}
+
+.slide-down {
+  transform: translateY(0);
 }

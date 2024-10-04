@@ -1,5 +1,7 @@
+import TooltipComponent from "@/components/elisa/Tooltip";
+
 const BookingPage = () => {
-  return <div>BookingPage</div>;
+  return <></>;
 };
 
 export default BookingPage;

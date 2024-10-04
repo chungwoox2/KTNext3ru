@@ -1,0 +1,94 @@
+{
+  "june": [
+    {
+      "gday": 1,
+      "gmonth": 6,
+      "gtime": "14:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 3,
+      "gmonth": 6,
+      "gtime": "14:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 5,
+      "gmonth": 6,
+      "gtime": "18:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 8,
+      "gmonth": 6,
+      "gtime": "14:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 10,
+      "gmonth": 6,
+      "gtime": "14:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 12,
+      "gmonth": 6,
+      "gtime": "18:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 15,
+      "gmonth": 6,
+      "gtime": "18:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 18,
+      "gmonth": 6,
+      "gtime": "14:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 20,
+      "gmonth": 6,
+      "gtime": "18:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    },
+    {
+      "gday": 22,
+      "gmonth": 6,
+      "gtime": "18:00",
+      "gyear": "2024",
+      "home": "KT",
+      "stadium": "수원",
+      "visit": "LG"
+    }
+  ]
+}

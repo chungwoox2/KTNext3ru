@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import Player from "@/store/Today-player";
 
 const getColorClass = (rating: number) => {
   if (rating < 2.0) {
@@ -14,10 +13,9 @@ const getColorClass = (rating: number) => {
   } else if (rating < 8.0) {
     return "bg-orange-500";
   } else {
-    return "bg-red-500";
+    return "bg-red-500 ";
   }
 };
-
 const getImageSrc = (rating: number) => {
   if (rating < 2.0) {
     return "/images/번개.svg";
@@ -32,78 +30,61 @@ const getImageSrc = (rating: number) => {
   }
 };
 
-const getImageTop = (imageSrc: String) => {
-  if (imageSrc === "/images/번개.svg") {
-    return "-37%";
-  } else if (imageSrc === "/images/비.svg") {
-    return "-37%";
-  } else {
-    return "-37%";
-  }
-};
-
-const getImageLeft = (imageSrc: String) => {
-  if (imageSrc === "/images/해구름.svg") {
-    return "72%";
-  } else if (imageSrc === "/images/구름.svg") {
-    return "72%";
-  } else {
-    return "75%";
-  }
-};
-
-const PlayerCard: React.FC<Player> = ({
+interface PlayerCardProps {
+  name: string;
+  imageUrl: string;
+  number: string;
+  position_translated: string;
+  rating: number;
+  pcode: string;
+  changeinn: string;
+  isMaxRating: boolean;
+}
+const PlayerCard: React.FC<PlayerCardProps> = ({
   name,
   imageUrl,
   number,
-  position,
-  role,
+  position_translated,
   rating,
   pcode,
-  onClick,
   changeinn,
+  isMaxRating,
 }) => {
   const colorClass = getColorClass(rating);
   const imageSrc = getImageSrc(rating);
-
+  const displayRating = typeof rating === "number" && !isNaN(rating) ? rating.toFixed(2) : 0.0;
   return (
     <div
-      onClick={onClick}
-      className={`relative my-4 p-1 rounded-[18px] border border-black bg-black `}
+      className={`relative p-1 rounded-[18px] border border-black bg-black font-['KT'] ${
+        isMaxRating ? "animate-pulseBorder animate-burningImage" : ""
+      }`}
     >
-      <div className="relative w-40 h-44">
-        <Image src={imageUrl} alt={name} layout="fill" style={{ top: "-7%", left: "0%" }} />
-
+      <Image src={imageUrl} alt={name} layout="fill" style={{ top: "-25%", left: "0%" }} />
+      <div className="relative w-32 h-32">
         <div
-          className={`absolute p-1 rounded-lg font-bold text-xl text-center w-12 h-8 ${colorClass}`}
-          style={{ top: "-10%", left: "90%" }}
+          className={`absolute rounded-[9px] flex justify-center items-center p-1  font-bold text-lg  w-12 h-8 ${colorClass}`}
+          style={{ top: "-15%", left: "-20%" }}
         >
-          {rating}
+          {displayRating}
         </div>
-        <div
-          className={`absolute w-24 h-16 `}
-          style={{ top: getImageTop(imageSrc), left: getImageLeft(imageSrc) }}
-        >
+        <div className={`absolute w-20 h-20`} style={{ top: "-35%", left: "75%" }}>
           <Image src={imageSrc} alt="weather" layout="fill" />
-        </div>
-        <div
-          className="bg-black text-white text-lg absolute px-1"
-          style={{ top: "0%", left: "0%" }}
-        >
-          {role}
         </div>
       </div>
       <div className="text-white relative overflow-hidden p-1 rounded-lg">
-        <div className="text-white-40 text-lg pl-1 flex justify-start ">No. {number}</div>
+        <div className="flex justify-between text-sm">
+          <div className="text-gray-400">No. {number}</div>
+          <div className=" text-white">{position_translated}</div>
+        </div>
         <div className="ml-4 text-lg">
           {name}
           <Image
-            src="/images/logo.svg"
+            src="/images/card_logo.svg"
             alt="로고다"
             width={51.37}
             height={54.17}
             className="absolute"
-            style={{ top: "30%", left: "80%" }}
+            style={{ top: "40%", left: "70%" }}
           />
         </div>
       </div>

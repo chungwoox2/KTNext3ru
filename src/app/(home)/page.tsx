@@ -1,10 +1,10 @@
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/shadcn-ui/button";
 import Link from "next/link";
 
 const HomePage = () => {
   return (
     <>
-      <div>HomePage</div>
+      {/* <div>HomePage</div>
       <Link
         href="/"
         className={buttonVariants({ variant: "default" })}
@@ -17,7 +17,7 @@ const HomePage = () => {
         className={buttonVariants({ variant: "destructive" })}
       >
         얼리버드 티켓 구매
-      </Link>
+      </Link> */}
     </>
   );
 };

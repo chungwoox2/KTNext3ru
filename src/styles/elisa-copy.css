@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AreaNameSwiper 컴포넌트 */
+.swiper-scrollbar {
+  display: block !important;
+  /* position: absolute;
+  z-index: 50 !important; */
+  --swiper-scrollbar-border-radius: 15px;
+  --swiper-scrollbar-top: auto;
+  --swiper-scrollbar-bottom: 4px;
+  --swiper-scrollbar-left: auto;
+  --swiper-scrollbar-right: 0px;
+  --swiper-scrollbar-sides-offset: 1%;
+  --swiper-scrollbar-bg-color: rgba(0, 0, 0, 0.2);
+  --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+  --swiper-scrollbar-size: 7px;
+}
+
+.dark .swiper-scrollbar {
+  --swiper-scrollbar-bg-color: rgba(255, 255, 255, 0.2);
+  --swiper-scrollbar-drag-bg-color: rgb(255, 255, 255, 0.6);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* padding: 30px; */
+}

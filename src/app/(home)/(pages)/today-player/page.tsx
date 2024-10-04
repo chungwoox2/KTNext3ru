@@ -5,17 +5,10 @@ import TodayPlayerPitcherModal from "@/components/chungwoo/TodayPlayerPitcherMod
 
 const TodayPlayer = () => {
   return (
-    <div>
-      <div className="flex justify-center">
-        <div className="">
-          <ColorMeaning />
-        </div>
-        <div className="">
-          <TodayPlayerCon />
-        </div>
-        <TodayPlayerHitterModal />
-        <TodayPlayerPitcherModal />
-      </div>
+    <div className=" h-full">
+      <TodayPlayerCon />
+      <TodayPlayerHitterModal />
+      <TodayPlayerPitcherModal />
     </div>
   );
 };
