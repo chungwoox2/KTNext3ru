@@ -5,10 +5,7 @@ import "@/styles/elisa.css";
 const TicketInfoPage = () => {
   return (
     <>
-      <div
-        id="page-content-header"
-        className="mt-60"
-      >
+      <div id="page-content-header" className="mt-60">
         <div id="tab-header">
           <Link href="/">가격표</Link>
           <Link href="/">할인 혜택</Link>
