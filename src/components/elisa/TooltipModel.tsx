@@ -2,7 +2,6 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { TTooltip } from "./CenterModel";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -11,7 +10,7 @@ type GLTFResult = GLTF & {
   materials: {};
 };
 
-export function TooltipModel({ position, text }: TTooltip) {
+export function TooltipModel({ position, text }: any) {
   const { nodes, materials } = useGLTF("/models/tooltip.glb") as GLTFResult;
 
   console.log("tooltip loaded!!!");

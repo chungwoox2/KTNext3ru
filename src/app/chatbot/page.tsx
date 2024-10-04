@@ -2,20 +2,10 @@
 
 import { useState } from "react";
 
-import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
 import "@/styles/gwanwoo.css";
 import Chatting from "@/components/gwanwoo/chatbot/Chatting";
 import Image from "next/image";
-
-import config from "@/components/gwanwoo/chatbot/bot/config";
-import MessageParser from "@/components/gwanwoo/chatbot/bot/MessageParser";
-import ActionProvider from "@/components/gwanwoo/chatbot/bot/ActionProvider";
-
-import DailySchedule from "@/components/gwanwoo/chatbot/bot/widgets/DailySchedule";
-import TeamRecord from "@/components/gwanwoo/chatbot/bot/widgets/TeamRecord";
-import BatterFavoritePlayer from "@/components/gwanwoo/chatbot/bot/widgets/FavoritePlayer/BatterFavoritePlayer";
-import PitcherFavoritePlayer from "@/components/gwanwoo/chatbot/bot/widgets/FavoritePlayer/PitcherFavoritePlayer";
 
 // const MyChatbot = () => {
 //   const open = true;

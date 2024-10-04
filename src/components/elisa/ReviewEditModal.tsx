@@ -72,14 +72,13 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
   const filteredAreas = searchInput
     ? // 입력하면 해당하는 입력값(글자 단위)을 포함하는 목록만 보여주고
       seatInfo.areas.filter((area) =>
-        area.area_name.toLowerCase().includes(searchInput.toLowerCase()),
+        area.area_name.toLowerCase().includes(searchInput.toLowerCase())
       )
     : // 검색창에 아무것도 입력하지 않으면 목록 다 보여주기
       seatInfo.areas;
 
   const filteredZones =
-    selectedAreaName &&
-    seatInfo.areas.find((area) => area.area_name === selectedAreaName);
+    selectedAreaName && seatInfo.areas.find((area) => area.area_name === selectedAreaName);
 
   // const filteredZoneItems =
   //   zoneSearchInput && filteredZones
@@ -97,31 +96,21 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
     setSearchInput(event.target.value);
   };
 
-  const handleCommentChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>,
-  ) => {
+  const handleCommentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value);
   };
 
   useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
+    isOpen ? (document.body.style.overflow = "hidden") : (document.body.style.overflow = "unset");
   }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
     <>
-      <div
-        className="fixed inset-0 bg-black bg-opacity-50 z-40"
-        onClick={onClose}
-      ></div>
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-40" onClick={onClose}></div>
       <div className="relative h-full pb-14 inset-0 z-50 flex items-center justify-center">
-        <form
-          id="edit-review-modal"
-          className="w-full"
-        >
+        <form id="edit-review-modal" className="w-full">
           <Card className="py-2 px-8">
             <CardHeader className="pb-3">
               <CardTitle className="text-2xl font-bold">리뷰 작성</CardTitle>
@@ -131,10 +120,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
             </CardHeader>
             <CardContent className="mt-4">
               <div className="flex items-center">
-                <Label
-                  htmlFor="status"
-                  className="mr-12 text-md"
-                >
+                <Label htmlFor="status" className="mr-12 text-md">
                   구역
                 </Label>
                 <div className="mr-4">
@@ -157,10 +143,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                           </div>
                         </form>
                         {filteredAreas.map((area) => (
-                          <SelectItem
-                            key={area.area_name}
-                            value={area.area_name}
-                          >
+                          <SelectItem key={area.area_name} value={area.area_name}>
                             {area.area_name}
                           </SelectItem>
                         ))}
@@ -189,8 +172,8 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                         {/* Filtered based on selected area name */}
                         {filteredZones &&
                           "zones" in filteredZones &&
-                          filteredZones.zones.map((zone) => (
-                            <SelectItem value={zone.zone}>
+                          filteredZones.zones.map((zone: any) => (
+                            <SelectItem key={zone} value={zone}>
                               {zone.zone}
                             </SelectItem>
                           ))}
@@ -203,10 +186,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                 <div className="mr-12 text-md">별점</div>
                 <div className="pl-1">
                   <div className="flex justify-start items-center mb-2">
-                    <Label
-                      htmlFor="name"
-                      className="mr-14 text-md"
-                    >
+                    <Label htmlFor="name" className="mr-14 text-md">
                       전망
                     </Label>
                     <Rating
@@ -228,10 +208,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                     )}
                   </div>
                   <div className="flex justify-start items-center mb-2">
-                    <Label
-                      htmlFor="name"
-                      className="mr-14 text-md"
-                    >
+                    <Label htmlFor="name" className="mr-14 text-md">
                       거리
                     </Label>
                     <Rating
@@ -248,19 +225,12 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                     />
                     {distanceValue !== null && (
                       <p className="text-md text-muted-foreground">
-                        {
-                          labels[
-                            distanceHover !== -1 ? distanceHover : distanceValue
-                          ]
-                        }
+                        {labels[distanceHover !== -1 ? distanceHover : distanceValue]}
                       </p>
                     )}
                   </div>
                   <div className="flex justify-start items-center">
-                    <Label
-                      htmlFor="name"
-                      className="mr-7 text-md"
-                    >
+                    <Label htmlFor="name" className="mr-7 text-md">
                       응원열기
                     </Label>
                     <Rating
@@ -277,11 +247,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
                     />
                     {cheeringValue !== null && (
                       <p className="text-md text-muted-foreground">
-                        {
-                          labels[
-                            cheeringHover !== -1 ? cheeringHover : cheeringValue
-                          ]
-                        }
+                        {labels[cheeringHover !== -1 ? cheeringHover : cheeringValue]}
                       </p>
                     )}
                   </div>
@@ -289,10 +255,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <div className="mt-5 flex">
-                  <Label
-                    htmlFor="description"
-                    className="flex-shrink-0 mr-12 text-md"
-                  >
+                  <Label htmlFor="description" className="flex-shrink-0 mr-12 text-md">
                     리뷰
                   </Label>
                   <Textarea
@@ -309,14 +272,9 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
               </div>
               <div>
                 <div className="flex flex-col mt-5">
-                  <Label
-                    htmlFor="description"
-                    className="flex-shrink-0 mr-12 mb-2 text-md"
-                  >
+                  <Label htmlFor="description" className="flex-shrink-0 mr-12 mb-2 text-md">
                     좌석뷰 사진 업로드
-                    <span className="text-muted-foreground ml-1 text-md">
-                      (최대 6개)
-                    </span>
+                    <span className="text-muted-foreground ml-1 text-md">(최대 6개)</span>
                   </Label>
                   <MultiFileDropzoneUsage />
                 </div>
@@ -334,11 +292,7 @@ const ReviewEditModal: FC<ModalProps> = ({ isOpen, onClose }) => {
               >
                 취소
               </Button>
-              <Button
-                type="submit"
-                className="ml-3"
-                onClick={() => setIsSubmitted(true)}
-              >
+              <Button type="submit" className="ml-3" onClick={() => setIsSubmitted(true)}>
                 제출
               </Button>
             </CardFooter>

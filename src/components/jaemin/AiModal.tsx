@@ -6,6 +6,7 @@ import Image from "next/image";
 import PlayerCard from "@/components/jaemin/PlayerCard";
 import { Player } from "@/store/SquardPitcher"; // Player 타입을 가져옵니다
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion"; // Variants 타입을 import
 
 interface ModalProps {
   isOpen: boolean;
@@ -88,7 +89,7 @@ const AiModal: React.FC<ModalProps> = ({ isOpen, onClose, onLineupSelect }) => {
     onClose();
   };
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0.7,
       y: 4,
@@ -99,7 +100,7 @@ const AiModal: React.FC<ModalProps> = ({ isOpen, onClose, onLineupSelect }) => {
       transition: {
         duration: 1,
         repeat: Infinity,
-        repeatType: "reverse",
+        repeatType: "reverse", // "string"이 아닌 리터럴로 설정
       },
     },
   };
@@ -109,10 +110,7 @@ const AiModal: React.FC<ModalProps> = ({ isOpen, onClose, onLineupSelect }) => {
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
       onClick={onClose}
     >
-      <div
-        className="bg-white p-5 rounded-[20px] relative"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="bg-white p-5 rounded-[20px] relative" onClick={(e) => e.stopPropagation()}>
         <h2 className="text-xl mb-4 font-['KT']">AI 라인업 추천</h2>
         <button
           className="absolute top-3 right-4 w-4 h-4 bg-red-500 text-white rounded-[10px] hover:bg-red-800 "
@@ -139,9 +137,7 @@ const AiModal: React.FC<ModalProps> = ({ isOpen, onClose, onLineupSelect }) => {
                 transform: "scale(0.7)",
               }}
               key={index}
-              className={`absolute cursor-pointer ${getPositionStyle(
-                player.position
-              )}`}
+              className={`absolute cursor-pointer ${getPositionStyle(player.position)}`}
               initial="hidden"
               animate="visible"
               custom={index}
